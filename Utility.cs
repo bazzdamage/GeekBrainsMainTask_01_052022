@@ -35,5 +35,32 @@ namespace GeekBrainsMainTask_01_052022
                 Console.WriteLine(stringArray[i]);
             }
         }
+        public static string[] UserInputStringArray(char separator)
+        {
+            bool result = false;
+            int count = 0;
+            StringBuilder sb = new StringBuilder();
+            Console.WriteLine("Please input some symbols or entire string, then PRESS ENTER:\n or type quit to make a Array");
+            while (result == false)
+            {
+                string s = Console.ReadLine();
+                if (s.ToLower() == "quit")
+                {
+                    result = true;
+                }
+                else
+                {
+                    sb = sb.Append(s + separator);
+                    count++;
+                    Console.WriteLine($"You are inputed {count} strings already...");
+                }
+            }
+            return MakeArrayFromString(sb.ToString(), separator);
+        }
+        public static string[] MakeArrayFromString(string str, char separator)
+        {
+            string[] result = str.Split(separator);
+            return result;
+        }
     }
 }
