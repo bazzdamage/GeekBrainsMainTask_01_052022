@@ -9,7 +9,7 @@ namespace GeekBrainsMainTask_01_052022
             int stringCount = 0;
             foreach (string word in stringArray)
             {
-                if (word.Length >= wordlength) stringCount++;
+                if (word.Length <= wordlength) stringCount++;
             }
             return stringCount;
         }
@@ -19,7 +19,7 @@ namespace GeekBrainsMainTask_01_052022
             int j = 0;
             foreach (string word in stringArray)
             {
-                if (word.Length >= wordlength)
+                if (word.Length <= wordlength)
                 {
                     resultArray[j] = word;
                     j++;
